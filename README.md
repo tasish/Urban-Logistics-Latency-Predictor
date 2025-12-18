@@ -5,6 +5,10 @@
 ![Model](https://img.shields.io/badge/Model-XGBoost-red)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 
+## 🔗 Live Demo
+Access the live application here: **[Urban Logistics Predictor App](https://urban-logistics-latency-predictor-mbhtgqqsdzwx6khpyffygj.streamlit.app/)**
+
+---
 ## 📌 Project Overview
 In the on-demand economy, the "Last-Mile" delivery phase is the most expensive and unpredictable part of the supply chain. Inaccurate Estimated Time of Arrival (ETA) leads to customer dissatisfaction and inefficient fleet management.
 
