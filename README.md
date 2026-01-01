@@ -2,7 +2,16 @@
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue) ![XGBoost](https://img.shields.io/badge/Model-XGBoost-orange) ![Streamlit](https://img.shields.io/badge/App-Streamlit-red)
 
+<<<<<<< HEAD
 A "Resume-Grade" Machine Learning project that predicts last-mile delivery latency with high precision. It leverages geospatial data, traffic patterns, and agent profiles to optimize logistics operations.
+=======
+## 🔗 Live Demo
+Access the live application here: **[Urban Logistics Predictor App](https://urban-logistics-latency-predictor-mbhtgqqsdzwx6khpyffygj.streamlit.app/)**
+
+---
+## 📌 Project Overview
+In the on-demand economy, the "Last-Mile" delivery phase is the most expensive and unpredictable part of the supply chain. Inaccurate Estimated Time of Arrival (ETA) leads to customer dissatisfaction and inefficient fleet management.
+>>>>>>> 26686a0fdcc22bc4da5e690183eb80126d87a85a
 
 ## 🌟 Key Features
 
