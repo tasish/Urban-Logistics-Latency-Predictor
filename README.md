@@ -1,61 +1,83 @@
-# 🚚 Urban Logistics: Delivery Latency Predictor
+# 🚚 Urban Logistics: AI Latency Predictor
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![Library](https://img.shields.io/badge/Library-Scikit--Learn-orange)
-![Model](https://img.shields.io/badge/Model-XGBoost-red)
-![Status](https://img.shields.io/badge/Status-Completed-success)
+![Python](https://img.shields.io/badge/Python-3.11-blue) ![XGBoost](https://img.shields.io/badge/Model-XGBoost-orange) ![Streamlit](https://img.shields.io/badge/App-Streamlit-red)
 
+<<<<<<< HEAD
+A "Resume-Grade" Machine Learning project that predicts last-mile delivery latency with high precision. It leverages geospatial data, traffic patterns, and agent profiles to optimize logistics operations.
+=======
 ## 🔗 Live Demo
 Access the live application here: **[Urban Logistics Predictor App](https://urban-logistics-latency-predictor-mbhtgqqsdzwx6khpyffygj.streamlit.app/)**
 
 ---
 ## 📌 Project Overview
 In the on-demand economy, the "Last-Mile" delivery phase is the most expensive and unpredictable part of the supply chain. Inaccurate Estimated Time of Arrival (ETA) leads to customer dissatisfaction and inefficient fleet management.
+>>>>>>> 26686a0fdcc22bc4da5e690183eb80126d87a85a
 
-This project deploys a Machine Learning solution to predict delivery time (in minutes) based on:
-- **Geospatial Data:** Pickup and Drop coordinates (Distance calculated via Geodesic formula).
-- **Temporal Data:** Time of day, Weekend vs. Weekday, Month.
-- **Operational Metrics:** Delivery Agent Age, Ratings, and Vehicle Type.
-- **External Factors:** Weather Conditions and Traffic Density.
+## 🌟 Key Features
 
-## 🛠️ Methodology & Pipeline
+### 🧠 Advanced ML Pipeline
+*   **XGBoost Regressor:** Optimized using `RandomizedSearchCV` for peak performance ($R^2 \approx 0.84$).
+*   **Feature Engineering:** Includes **Traffic-Adjusted Distance**, Prep Time Calculation, and Geodesic clustering.
+*   **Robust Preprocessing:** Handles missing data, categorical encoding, and feature scaling automatically.
 
-[Image of Machine Learning Pipeline]
+### 📊 Business Intelligence
+*   **Interactive Hotspot Map:** Visualizes high-demand delivery zones to aid fleet allocation.
+*   **Efficiency Analytics:** Analyzes Agent Age vs. Delivery Time and Bottleneck detection (Prep Time).
 
-The project follows a structured Data Science lifecycle:
-1.  **Data Cleaning:** Handling "NaN" strings, formatting datetimes, and cleaning categorical features.
-2.  **Feature Engineering:**
-    * Calculated `Geodesic Distance` (km) from Latitude/Longitude.
-    * Extracted `Order_Prepare_Time` (Time between order placement and pickup).
-    * Created temporal flags (`is_weekend`, `time_of_day`).
-3.  **Preprocessing:** Label Encoding for categorical data and Standard Scaling for numerical features.
-4.  **Model Selection:** Compared Linear Regression, Decision Trees, Random Forest, and **XGBoost**.
-5.  **Evaluation:** Selected XGBoost as the champion model based on $R^2$ Score and MAE.
+### 🚀 Modern Web Application
+*   **Real-time Prediction:** Instant latency estimates based on live parameters.
+*   **Explainable AI:** Shows "Route Complexity Score" to explain *why* a delivery is delayed.
+*   **Dashboard UI:** Sleek, dark-mode friendly interface built with Streamlit.
 
-## 💻 Tech Stack
-* **Language:** Python
-* **Data Manipulation:** Pandas, NumPy
-* **Visualization:** Matplotlib, Seaborn
-* **Geospatial Processing:** Geopy
-* **Machine Learning:** Scikit-Learn, XGBoost
-* **Deployment:** Pickle (Serialization)
+## 📂 Project Structure
 
-## 📊 Key Results
-The **XGBoost Regressor** outperformed other algorithms, capturing non-linear relationships effectively.
+```bash
+Urban-Logistics-Predictor/
+├── data/                   # Raw Dataset
+├── assets/                 # Generated Maps & Plots
+├── models/                 # Saved Models (XGBoost, Scaler)
+├── src/                    # Source Code
+│   ├── config.py           # Configuration & Mappings
+│   ├── preprocessing.py    # Cleaning & Feature Logic
+│   ├── train.py            # Training Pipeline
+│   ├── evaluate.py         # Model Comparison & Advanced Stats
+│   └── insights.py         # Business Intelligence (Maps/Charts)
+├── app.py                  # Streamlit Web Application
+├── requirements.txt        # Dependencies
+├── notebooks/              # Original Experimentation Notebook
+└── README.md               # Documentation
+```
+
+## 🛠️ How to Run
+
+1.  **Install Dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+2.  **Train the Model (Optional - Models already included):**
+    ```bash
+    python -m src.train
+    ```
+
+3.  **Generate Insights (Optional):**
+    ```bash
+    python -m src.evaluate
+    python -m src.insights
+    ```
+
+4.  **Launch the App:**
+    ```bash
+    streamlit run app.py
+    ```
+
+## 📈 Model Performance
 
 | Metric | Score | Interpretation |
 | :--- | :--- | :--- |
-| **R² Score** | **0.82** | Model explains 82% of the variance in delivery time. |
-| **MAE** | **~4.5 min** | Predictions are typically within ±4.5 minutes of actual time. |
+| **R² Score** | **0.84** | Explains 84% of variance in delivery time. |
+| **MAE** | **~3.0 min** | Predictions are accurate within ±3 minutes. |
 
-> *Note: Metrics may vary slightly based on the random seed during training.*
-
-## 📈 Visual Insights
-The project includes diagnostic plots to interpret model behavior:
-* **Feature Importance:** Identified that `Distance` and `Agent_Ratings` are the top predictors.
-* **Residual Analysis:** Errors follow a normal distribution (Bell Curve), confirming the model is unbiased.
-
-## 🚀 How to Run
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/your-username/Urban-Logistics-Predictor.git](https://github.com/your-username/Urban-Logistics-Predictor.git)
+> The model notably outperforms Random Forest in our benchmarks (see `Analysis` tab in App).
+>
+> ![Algorithm Comparison](assets/model_comparison.png)
